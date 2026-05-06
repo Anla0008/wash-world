@@ -1,15 +1,10 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
+import { useRef } from "react";
 import { motion, useMotionValue, animate, useTransform } from "framer-motion";
 import ArrowRight from "../../icons/navigation/ArrowRight";
 import { useState } from "react";
-
-type SwipeProps = {
-    children: ReactNode;
-    onComplete?: () => void;
-    disabled?: boolean;
-};
+import { SwipeProps } from "@/types/button";
 
 const Swipe = ({ children, onComplete, disabled }: SwipeProps) => {
     const x = useMotionValue(0);

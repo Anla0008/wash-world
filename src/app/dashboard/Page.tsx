@@ -1,10 +1,11 @@
+import ProgressBar from "@/components/global/grafik/ProgressBar";
 import Timer from "@/components/vask/Timer";
 
-export default function Dashboard() {
-    return (  
-        <div>
-            <Timer></Timer>
-        </div>
-    );
+const Dashboard = () => {
+    return ( 
+        <ProgressBar activeIndex={1} />
+     );
 }
+ 
+export default Dashboard;
  

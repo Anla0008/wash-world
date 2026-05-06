@@ -3,13 +3,9 @@ import { useState } from "react";
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { on } from "events";
+import { AnchorButtonProps } from "@/types/button";
 
-type PrimaryButtonAnchorTagProps = {
-    children: ReactNode;
-    href: string;
-};
-
-const PrimaryButtonAnchorTag = ({ children, href }: PrimaryButtonAnchorTagProps) => {
+const PrimaryButtonAnchorTag = ({ children, href }: AnchorButtonProps) => {
     const [isActive, setIsActive] = useState(false);
     const [isDisabled, setIsDisabled] = useState(false);
 

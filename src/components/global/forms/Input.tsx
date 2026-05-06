@@ -1,16 +1,9 @@
 import Validated from "../icons/validation/Validated";
 import Error from "../icons/validation/Error";
+import { FormProps } from "@/types/forms";
+import { useState } from "react";
 
-import { useState, type ReactNode } from "react";
 
-type InputProps = {
-  label: ReactNode;
-  error?: boolean;
-  validated?: boolean;
-  placeholder: string;
-  type: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-};
 const Input = ({
   label,
   error,
@@ -18,7 +11,7 @@ const Input = ({
   type,
   placeholder,
   onChange,
-}: InputProps) => {
+}: FormProps) => {
   const [charCount, setCharCount] = useState(0);
 
   return (

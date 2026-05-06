@@ -4,11 +4,7 @@ import { motion } from "framer-motion";
 import Card from "../icons/grafik/Card";
 import Wash from "../icons/navbar/Wash";
 import Checkmark from "../icons/grafik/Checkmark";
-
-type ProgressBarProps = {
-    activeIndex?: number;
-    isWashProcess?: boolean;
-};
+import { ProgressBarProps } from "@/types/progressbar";
 
 const ProgressBar = ({
     activeIndex,

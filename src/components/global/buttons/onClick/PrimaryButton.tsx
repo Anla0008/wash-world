@@ -1,15 +1,9 @@
 "use client";
 import { useState } from "react";
-import type { ReactNode } from "react";
 import { motion } from "framer-motion";
+import { ButtonProps } from "@/types/button";
 
-
-type PrimaryButtonProps = {
-    children: ReactNode;
-    onClick?: () => void;
-};
-
-const PrimaryButton = ({ children, onClick }: PrimaryButtonProps) => {
+const PrimaryButton = ({ children, onClick }: ButtonProps) => {
     const [isActive, setIsActive] = useState(false);
     const [isDisabled, setIsDisabled] = useState(false);
 

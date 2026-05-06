@@ -1,16 +1,9 @@
 "use client";
 import { useState } from "react";
 import type { ReactNode } from "react";
-import { motion } from "framer-motion";
-import { on } from "events";
-import SecondaryButton from "../onClick/SecondaryButton";
+import { AnchorButtonProps } from "@/types/button";
 
-type SecondaryButtonAnchorTagProps = {
-    children: ReactNode;
-    href: string;
-};
-
-const SecondaryButtonAnchorTag = ({ children, href }: SecondaryButtonAnchorTagProps) => {
+const SecondaryButtonAnchorTag = ({ children, href }: AnchorButtonProps) => {
     const [isDisabled, setIsDisabled] = useState(false);
 
 

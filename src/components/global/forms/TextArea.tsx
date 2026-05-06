@@ -3,15 +3,9 @@ import Validated from "../icons/validation/Validated";
 import Error from "../icons/validation/Error";
 import { useState } from "react";
 import type { ReactNode } from "react";
+import { FormProps } from "@/types/forms";
 
-type TextAreaProps = {
-    label: ReactNode;
-    error?: boolean;
-    validated?: boolean;
-    placeholder: string;
-};
-
-const TextArea = ({ label, error, validated, placeholder }: TextAreaProps) => {
+const TextArea = ({ label, error, validated, placeholder }: FormProps) => {
     // TODO: opdater denne senere til regex fra backend
     const maxLength = 200;
 

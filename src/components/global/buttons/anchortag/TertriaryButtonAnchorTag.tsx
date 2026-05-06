@@ -3,13 +3,9 @@ import { useState } from "react";
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { on } from "events";
+import { AnchorButtonProps } from "@/types/button";
 
-type TertiaryButtonAnchorTagProps = {
-    children: ReactNode;
-    href: string;
-};
-
-const TertiaryButtonAnchorTag = ({ children, href }: TertiaryButtonAnchorTagProps) => {
+const TertiaryButtonAnchorTag = ({ children, href }: AnchorButtonProps) => {
     const [isActive, setIsActive] = useState(false);
     const [isDisabled, setIsDisabled] = useState(false);
 

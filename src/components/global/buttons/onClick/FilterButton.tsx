@@ -1,14 +1,7 @@
 "use client";
-import { ReactNode } from "react";
+import { ButtonProps } from "@/types/button";
 
-type FilterButtonProps = {
-    children: ReactNode;
-    isActive?: boolean;
-    onToggle?: () => void;
-    onClick?: () => void;
-};
-
-const FilterButton = ({children, isActive = false, onToggle, onClick}: FilterButtonProps) => {
+const FilterButton = ({children, isActive = false, onToggle, onClick}: ButtonProps) => {
 
     return ( 
         <button
