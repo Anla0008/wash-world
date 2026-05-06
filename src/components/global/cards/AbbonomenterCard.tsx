@@ -3,7 +3,7 @@ import PrimaryButtonAnchorTag from "../buttons/anchortag/PrimaryButtonAnchorTag"
 
 const AbbonomenterCard = () => {
   return (
-    <section className="max-w-lg w-full flex gap-4 overflow-x-auto scroll-smooth hide-scrollbar pt-8">
+    <section className="max-w-lg w-full flex gap-4 overflow-x-auto scroll-smooth hide-scrollbar pt-8 pb-8">
       {/* 1. card */}
       <article className="bg-(--gray-60) w-52 h-52 rounded-md flex flex-col items-center justify-center shrink-0">
         <p className="extra-bold mt-2">Guld</p>

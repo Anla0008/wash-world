@@ -1,22 +1,23 @@
+import Link from "next/link";
 import ArrowRight from "../icons/navigation/ArrowRight";
 import PointBadge from "../grafik/PointBadge";
 
 // Værdierne her skal hentes dynamisk ind fra wash_history db tabel
 
-const HistorikCard = () => {
+const HistorikCard = ({ location, date, description, price, points, href }: HistorikCardProps) => {
   return (
-    <div className="p-3 bg-(--gray-10) text-(--foreground-reverse) rounded-md flex flex-col gap-2">
+    <Link href={href} className="p-3 bg-(--gray-10) text-(--foreground-reverse) rounded-md flex flex-col gap-2">
       <div className="flex justify-between items-center">
-        <h3 className="extra-bold">Højbjerg</h3>
-        <PointBadge points={15} />
+        <h3 className="extra-bold">{location}</h3>
+        <PointBadge points={points} />
       </div>
-      <p>12-01-2026</p>
-      <p>Brilliant</p>
+      <p>{date}</p>
+      <p>{description}</p>
       <div className="flex justify-between items-center">
-        <h3>189 DKK</h3>
-        <ArrowRight size={20}></ArrowRight>
+        <h3>{price} DKK</h3>
+        <ArrowRight size={20} />
       </div>
-    </div>
+    </Link>
   );
 };
 
