@@ -1,26 +1,46 @@
 "use client";
+
 import { useState } from "react";
-import Input from "@/components/global/forms/Input";
-import TextArea from "@/components/global/forms/TextArea";
-import TertriaryButton from "@/components/global/buttons/onClick/TertriaryButton";
-import Swipe from "@/components/global/buttons/onClick/Swipe";
-import SearchBar from "@/components/global/filtering/SearchBar";
-import FilterWrapper from "@/components/global/filtering/FilterWrapper";
-import FilterProgressBar from "@/components/global/filtering/FilterProgressBar";
-import ProgressBar from "@/components/global/grafik/ProgressBar";
+import { useAuth } from "@/hooks/useAuth";
+import { User } from "@/types/user";
+
 
 export default function Home() {
-  const [inputError, setInputError] = useState(true);
-  const [inputValidated, setInputValidated] = useState(false);
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
 
-  const [textAreaError, setTextAreaError] = useState(false);
-  const [textAreaValidated, setTextAreaValidated] = useState(true);
+  // Vi henter User (email, password osv. hentes én gang)
+  const [params, setParams] = useState<User>({} as User);
 
-  return <div className="flex flex-col align-center gap-10">
-    <Input label="Label" error={inputError} validated={inputValidated} placeholder="placeholder" type="password" />
-    <TextArea label="Label" error={textAreaError} validated={textAreaValidated} placeholder="placeholder"/>
-    <Swipe disabled={true}>Betal noget</Swipe>
-    <FilterWrapper/>
-    <ProgressBar activeIndex={2}/>
-  </div>;
+  const { login } = useAuth();
+
+  const handleSubmitLogin = async (e: any) => {
+    e.preventDefault();
+
+    const response = await login(params);
+
+    console.log(response);
+  };
+
+
+  return (
+    <div>
+      <form onSubmit={handleSubmitLogin}>
+        <input
+          type="text"
+          placeholder="email"
+          onChange={(e) => setParams({ ...params, username: e.target.value })}
+        />
+
+        <input
+          type="password"
+          placeholder="password"
+          onChange={(e) => setParams({ ...params, password: e.target.value })}
+        />
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+    )
+  ;
 }
