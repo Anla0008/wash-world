@@ -3,7 +3,7 @@ import PrimaryButtonAnchorTag from "../buttons/anchortag/PrimaryButtonAnchorTag"
 
 const AbbonomenterCard = () => {
   return (
-    <section className="max-w-lg w-full flex gap-4 overflow-x-auto scroll-smooth hide-scrollbar">
+    <section className="max-w-lg w-full flex gap-4 overflow-x-auto scroll-smooth hide-scrollbar pt-8">
       {/* 1. card */}
       <article className="bg-(--gray-60) w-52 h-52 rounded-md flex flex-col items-center justify-center shrink-0">
         <p className="extra-bold mt-2">Guld</p>
@@ -16,9 +16,9 @@ const AbbonomenterCard = () => {
       </article>
 
       {/* 2. card */}
-      <div className="relative shrink-0 overflow-visible">
+      <div className="relative shrink-0">
         {/* Badge */}
-        <div className="absolute -top-6 right-1 bg-(--splash) px-2 py-1 z-50">Populær!</div>
+        <div className="absolute -top-6 right-1 bg-(--splash) px-2 py-1 z-10">Populær!</div>
 
         <article className="relative bg-(--gray-60) w-52 h-52 rounded-md flex flex-col items-center justify-center shrink-0">
           <p className="extra-bold mt-2">Premium</p>
