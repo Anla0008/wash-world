@@ -8,6 +8,7 @@ import PracticInfoTime from "@/components/singleview/PracticInfoTime";
 import PracticInfoPrewash from "@/components/singleview/PracticInfoPrewash";
 import PracticInfoVacuumCleaner from "@/components/singleview/PracticInfoVacuumCleaner";
 import PracticInfoWashSelf from "@/components/singleview/PracticInfoWashSelf";
+import VaskehalCard from "@/components/global/cards/VaskehalCard";
 
 export default function Favorites() {
   return (

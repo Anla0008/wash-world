@@ -1,19 +1,21 @@
 import { ReactNode } from "react";
 
 export type ButtonProps = {
-    children: ReactNode;
-    isActive?: boolean;
-    onToggle?: () => void;
-    onClick?: () => void;
+  children: ReactNode;
+  isActive?: boolean;
+  onToggle?: () => void;
+  onClick?: () => void;
 };
 
 export type SwipeProps = {
-    children: ReactNode;
-    onComplete?: () => void;
-    disabled?: boolean;
+  children: ReactNode;
+  onComplete?: () => void;
+  disabled?: boolean;
 };
 
 export type AnchorButtonProps = {
-    children: ReactNode;
-    href: string;
+  children: ReactNode;
+  href: string;
+  target?: string;
+  rel?: string;
 };
