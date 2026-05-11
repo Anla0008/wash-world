@@ -17,5 +17,4 @@ export type AnchorButtonProps = {
   children: ReactNode;
   href: string;
   target?: string;
-  rel?: string;
 };
