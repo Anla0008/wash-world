@@ -23,6 +23,7 @@ export default function Favorites() {
         <PracticInfoPrewash></PracticInfoPrewash>
         <PracticInfoVacuumCleaner car_wash_vacuum={2}></PracticInfoVacuumCleaner>
         <PracticInfoWashSelf car_wash_self={2}></PracticInfoWashSelf>
+        <VaskehalCard city="Højbjerg" address="Bjødstrupvej 20E, 8270 Højbjerg" openingHours="07 - 22" status="Kort ventetid" image="/images/washworld.jpg" href="/vaskehaller/hojbjerg" />{" "}
       </section>
     </div>
   );
