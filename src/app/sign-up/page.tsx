@@ -1,0 +1,88 @@
+"use client";
+
+import { useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
+import { User } from "@/types/user";
+import PrimaryButton from "@/components/global/buttons/onClick/PrimaryButton";
+import Input from "@/components/global/forms/Input";
+import ProgressBar from "@/components/global/grafik/ProgressBar";
+// Vi henter User (email, password osv. hentes én gang)
+
+export default function Signup() {
+  const [params, setParams] = useState<User>({} as User);
+  const { signup } = useAuth();
+
+  const handleSubmitSignup = async (e: any) => {
+    e.preventDefault();
+
+    const response = await signup(params);
+
+    console.log(response);
+  };
+
+  return (
+    <div>
+      {/* =================== STEP 1 ================== */}
+      <section>
+        <ProgressBar activeIndex={1} />
+
+        <form onSubmit={handleSubmitSignup}>
+          <Input label="E-mail*" error={false} validated={false} type="email" placeholder="navn@eksempel.com" onChange={(e) => setParams({ ...params, user_email: e.target.value })} />
+
+          <Input label="Fornavn*" error={false} validated={false} type="text" placeholder="Anders" onChange={(e) => setParams({ ...params, user_first_name: e.target.value })} />
+
+          <Input label="Efternavn*" error={false} validated={false} type="text" placeholder="Andersen" onChange={(e) => setParams({ ...params, user_last_name: e.target.value })} />
+
+          <Input label="Kode*" error={false} validated={false} type="password" placeholder="123456" onChange={(e) => setParams({ ...params, user_hashed_password: e.target.value })} />
+
+          <Input
+            label="Gentag kode*"
+            error={false}
+            validated={false}
+            type="password"
+            placeholder="123456"
+            onChange={(e) =>
+              setParams({
+                ...params,
+                user_repeat_hashed_password: e.target.value,
+              })
+            }
+          />
+
+          <PrimaryButton>Gå videre</PrimaryButton>
+        </form>
+      </section>
+
+      {/* =================== STEP 2 ================== */}
+      <section>
+        <ProgressBar activeIndex={1} />
+
+        <form onSubmit={handleSubmitSignup}>
+          <Input label="E-mail*" error={false} validated={false} type="email" placeholder="navn@eksempel.com" onChange={(e) => setParams({ ...params, user_email: e.target.value })} />
+
+          <Input label="Fornavn*" error={false} validated={false} type="text" placeholder="Anders" onChange={(e) => setParams({ ...params, user_first_name: e.target.value })} />
+
+          <Input label="Efternavn*" error={false} validated={false} type="text" placeholder="Andersen" onChange={(e) => setParams({ ...params, user_last_name: e.target.value })} />
+
+          <Input label="Kode*" error={false} validated={false} type="password" placeholder="123456" onChange={(e) => setParams({ ...params, user_hashed_password: e.target.value })} />
+
+          <Input
+            label="Gentag kode*"
+            error={false}
+            validated={false}
+            type="password"
+            placeholder="123456"
+            onChange={(e) =>
+              setParams({
+                ...params,
+                user_repeat_hashed_password: e.target.value,
+              })
+            }
+          />
+
+          <PrimaryButton>Gå videre</PrimaryButton>
+        </form>
+      </section>
+    </div>
+  );
+}

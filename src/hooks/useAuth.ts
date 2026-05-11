@@ -10,7 +10,7 @@ export function useAuth() {
   //                          SIGNUP
   // ===========================================================
   const signup = useCallback(async (params: User) => {
-    const response = await fetch(baseUrl + "/api/signup", {
+    const response = await fetch(baseUrl + "/sign-up", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -27,7 +27,7 @@ export function useAuth() {
   //                          LOGIN
   // ===========================================================
   const login = useCallback(async (params: User) => {
-    const response = await fetch(baseUrl + "/api/login", {
+    const response = await fetch(baseUrl + "/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,5 +40,6 @@ export function useAuth() {
     }
   }, []);
 
+  // Herunder returnerer vi ALLE routes, som vi ønsker at kunne bruge i vores komponenter
   return { signup, login };
 }
