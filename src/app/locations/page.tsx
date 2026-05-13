@@ -19,20 +19,12 @@ export default function FindVaskehal() {
   }, [getLocations]);
 
   return (
-    <section>
-      <h1>Vaskehaller i nærheden</h1>
-
-      {locations.map((location) => (
-        <VaskehalCard
-          key={location.location_pk}
-          city={location.location_name}
-          address={`${location.location_address}, ${location.location_city}`}
-          openingHours="07-22"
-          status="Kort ventetid"
-          image="/image/washworld.jpg"
-          href={`/locations/${location.location_pk}`}
-        />
-      ))}
-    </section>
+    <main className="w-full">
+      <section className="flex w-full flex-col gap-5">
+        {locations.map((location) => (
+          <VaskehalCard key={location.location_pk} city={location.location_city} address={location.location_address} openingHours="07 - 22" image={location.location_img} href="#" location_pk={""} />
+        ))}
+      </section>
+    </main>
   );
 }

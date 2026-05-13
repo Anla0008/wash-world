@@ -7,4 +7,5 @@ export type Location = {
   car_wash_high_pressure?: number;
   car_wash_self?: number;
   car_wash_vacuum?: number;
+  location_img: string;
 };
