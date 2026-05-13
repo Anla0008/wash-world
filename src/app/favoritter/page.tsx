@@ -1,7 +1,7 @@
 "use client";
 import Faq from "@/components/global/cards/FAQ";
 import AbbonomenterCard from "@/components/global/cards/AbbonomenterCard";
-import HistorikCard from "@/components/global/cards/HistorikCard";
+import HistorikCard from "@/components/profil/HistorikCard";
 import PracticInfoCarwash from "@/components/singleview/PracticInfoCarwash";
 import PracticInfoHeight from "@/components/singleview/PracticInfoHeight";
 import PracticInfoTime from "@/components/singleview/PracticInfoTime";
