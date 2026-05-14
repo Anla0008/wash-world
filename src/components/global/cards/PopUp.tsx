@@ -13,7 +13,7 @@ type PopupProps = {
 
 const Popup = ({ title, message, subtitle, submessage, onClose }: PopupProps) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-1">
+    <div className="fixed inset-0 flex items-center justify-center z-1 bg-(--background-transparent) backdrop-blur-xs">
       <div className="bg-(--gray-10) p-8 text-center z-50 text-(--foreground-reverse) rounded-md shadow-md">
         <Cross size={25} color="--foreground-reverse"></Cross>
         <h2 className="extra-bold -mt-4">{title}</h2>
