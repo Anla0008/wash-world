@@ -34,7 +34,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className="w-full px-10 bg-foreground/80 backdrop-blur-3xl py-2 z-50"
+      className="w-full px-10 bg-foreground/80 backdrop-blur-3xl py-2 z-100"
       style={{
         boxShadow: "inset -5px -5px 15px #06C167, inset 30px 30px 10px #f1f1f1",
       }}

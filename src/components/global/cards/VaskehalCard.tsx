@@ -21,7 +21,7 @@ const VaskehalCard = ({ city, address, openingHours, image, href }: VaskehalCard
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 
   return (
-    <article className="col-span-2 relative flex gap-3 p-3 bg-(--gray-5) text-(--foreground-reverse) rounded-md">
+    <article className="col-span-2 relative flex gap-3 p-3 bg-(--gray-80) text-foreground rounded-md">
       <Image src={image} alt={`WashWorld ${city}`} width={110} height={170} className="rounded-md object-cover" />
 
       <div className="flex flex-1 flex-col justify-between">
@@ -52,7 +52,7 @@ const VaskehalCard = ({ city, address, openingHours, image, href }: VaskehalCard
         </div>
       </div>
 
-      <button type="button" onClick={() => setIsFavorite(!isFavorite)} aria-label={isFavorite ? "Fjern fra favoritter" : "Tilføj til favoritter"} className="absolute top-3 right-3 text-2xl text-(--foreground-reverse)">
+      <button type="button" onClick={() => setIsFavorite(!isFavorite)} aria-label={isFavorite ? "Fjern fra favoritter" : "Tilføj til favoritter"} className="absolute top-3 right-3 text-2xl text-foreground">
         {isFavorite ? <IoMdHeart /> : <IoIosHeartEmpty />}
       </button>
     </article>
