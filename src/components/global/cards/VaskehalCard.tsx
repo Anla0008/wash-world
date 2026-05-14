@@ -18,8 +18,7 @@ const VaskehalCard = ({ city, address, openingHours, image, href }: VaskehalCard
 
   const statusTextColor = status === "Kort ventetid" ? "text-(--brand-green)" : status === "Moderat ventetid" ? "text-(--splash)" : "text-(--error-red)";
 
-  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
-
+  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${address}, ${city}`)}`;
   return (
     <article className="col-span-2 relative flex gap-3 p-3 bg-(--gray-80) text-foreground rounded-md">
       <Image src={image} alt={`WashWorld ${city}`} width={110} height={170} className="rounded-md object-cover" />
