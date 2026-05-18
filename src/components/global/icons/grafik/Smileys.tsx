@@ -10,12 +10,13 @@ const Smileys = ({ onSelect }: { onSelect: (rating: number) => void }) => {
   const [selected, setSelected] = useState<string | null>(null);
 
   const toggleSmileys = (smiley: string, rating: number) => {
-    setSelected((prev) => (prev === smiley ? null : smiley));
-    onSelect(rating);
+    const isDeselecting = selected === smiley;
+    setSelected(isDeselecting ? null : smiley);
+    onSelect(isDeselecting ? 0 : rating); // Send 0 ved deselect
   };
 
   return (
-    <ul className="flex gap-5 mt-4 mb-14">
+    <ul className="flex gap-5 mt-4 mb-4">
       <li>
         <IoHappyOutline color={selected === "happy" ? "green" : "var(--foreground)"} onClick={() => toggleSmileys("happy", 1)} size={50} />
       </li>

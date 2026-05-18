@@ -6,7 +6,6 @@ import { FeedbackProps } from "@/types/feedback";
 // ===========================================================
 //                       SEND FEEDBACK
 // ===========================================================
-
 export function useFeedback() {
   const baseUrl = "http://127.0.0.1";
 
@@ -28,7 +27,7 @@ export function useFeedback() {
     }
 
     return await response.json();
-  }, []);
+  }, []); // Empty dependency array: funktionen oprettes kun én gang
 
   return { sendFeedback };
 }
