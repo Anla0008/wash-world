@@ -76,8 +76,66 @@ export function useAuth() {
     return data.location;
   }, []);
 
+  // ===========================================================
+  //                        GET FAVORITES
+  // ===========================================================
+  const getFavorites = useCallback(async () => {
+    const response = await fetch(baseUrl + "/favorites/2", {
+      // ToDo: skift 2 ud med rigtig user_pk når JWT er klar
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    if (!response.ok) {
+      throw new Error("Failed to get favorites");
+    }
+
+    const data = await response.json();
+    return data.favorites;
+  }, []);
+
+  // ===========================================================
+  //                        ADD FAVORITE
+  // ===========================================================
+  const addFavorite = useCallback(async (location_pk: string) => {
+    const response = await fetch(baseUrl + "/favorites", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify({ location_pk }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to add favorite");
+    }
+  }, []);
+
+  // ===========================================================
+  //                       REMOVE FAVORITE
+  // ===========================================================
+  const removeFavorite = useCallback(async (location_pk: string) => {
+    const response = await fetch(baseUrl + `/favorites/${location_pk}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to remove favorite");
+    }
+  }, []);
+
   // Herunder returnerer vi ALLE routes, som vi ønsker at kunne bruge i vores komponenter
-  return { signup, login, getLocations, getSingleLocation };
+  return { signup, login, getLocations, getSingleLocation, getFavorites, addFavorite, removeFavorite };
 }
 
 // ===========================================================

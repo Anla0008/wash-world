@@ -5,6 +5,7 @@ type VaskehalCardProps = {
   openingHours: string;
   image: string;
   href: string;
+  isFavorite?: boolean;
 };
 
 // Tilføj export
